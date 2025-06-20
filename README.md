@@ -1,3 +1,24 @@
+![Capstone](https://img.shields.io/badge/Project-Capstone-blueviolet)
+![Build](https://github.com/Trojan3877/Agentic-AI-Assistant/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://codecov.io/gh/Trojan3877/Agentic-AI-Assistant/branch/main/graph/badge.svg)
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Java](https://img.shields.io/badge/Java-17-red?logo=openjdk)
+![C++](https://img.shields.io/badge/C%2B%2B-17-lightgrey?logo=c%2B%2B)
+![FastAPI](https://img.shields.io/badge/FastAPI-Framework-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
+![Helm](https://img.shields.io/badge/Helm-Chart-informational)
+![Terraform](https://img.shields.io/badge/Terraform-EKS-critical)
+![Ansible](https://img.shields.io/badge/Ansible-Automation-red)
+
+
+
+
+
+
+
+
+
+
 # -Agentic-AI-Assistant
 This AI Agent production-grade autonomous agent that plans, executes, and evaluates complex tasks by orchestrating Large-Language-Model reasoning with enterprise data tools. Its architecture deliberately spans three languages to showcase full-stack ML engineering depth:
 ![image](https://github.com/user-attachments/assets/baa6a592-895f-4407-8104-9c00fbe76a1a)
