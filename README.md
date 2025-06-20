@@ -4,24 +4,22 @@ This AI Agent production-grade autonomous agent that plans, executes, and evalua
 
 # 🤖 Agentic-AI-Assistant
 
-![Capstone](https://img.shields.io/badge/Project-Capstone-blueviolet?style=for-the-badge)
-![Build](https://github.com/Trojan3877/Agentic-AI-Assistant/actions/workflows/ci.yml/badge.svg)
-![Coverage](https://codecov.io/gh/Trojan3877/Agentic-AI-Assistant/branch/main/graph/badge.svg)
-![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
-![Java](https://img.shields.io/badge/Java-17-red?logo=openjdk)
-![C++](https://img.shields.io/badge/C%2B%2B-17-lightgrey?logo=c%2B%2B)
-![FastAPI](https://img.shields.io/badge/FastAPI-Framework-brightgreen)
-![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
-![Helm](https://img.shields.io/badge/Helm-Chart-informational)
-![Terraform](https://img.shields.io/badge/Terraform-EKS-critical)
-![Ansible](https://img.shields.io/badge/Ansible-Automation-red)
-
----
 
 ### 🧠 Project Overview  
 **Agentic-AI-Assistant** is a multi-language, autonomous “planner–executor” agent that blends Java task-planning, Python orchestration, and high-performance C++ vector tools. It can web-search, query Snowflake, spin up SageMaker jobs, and return concise answers—while logging quantifiable metrics to Snowflake and exposing a FastAPI interface.
 
----
+## 🔍 Core AI / ML Algorithms Used
+
+| Badge | Algorithm / Component | Where It’s Used | Purpose |
+|-------|-----------------------|-----------------|---------|
+| ![LLM](https://img.shields.io/badge/Model-LLM-orange) | **Large Language Model (GPT-3.5 / GPT-4 / Bedrock)** | `agent_core.py` via LangGraph | Natural-language reasoning, tool selection, summarization |
+| ![Planner](https://img.shields.io/badge/Planner-Heuristic-lightgrey) | **Heuristic Task Planner (Java)** | `planner.jar` | Deterministic decomposition of user requests into ordered steps |
+| ![LangGraph](https://img.shields.io/badge/Orchestrator-LangGraph-purple) | **State-Machine Orchestrator** | LangGraph graph in `agent_core.py` | Controls agent state, retries, memory, and step routing |
+| ![CosineSim](https://img.shields.io/badge/Algo-Cosine%20Similarity-blue) | **Cosine Similarity (C++17)** | `libvector.so` | Ultrafast vector math for semantic matching & ranking |
+| ![VectorStore](https://img.shields.io/badge/VectorStore-FAISS-green) | **FAISS Embedding Retrieval** | `memory.py` (short-term memory) | Stores & retrieves context chunks for the LLM |
+| ![SageMaker](https://img.shields.io/badge/ML-AWS%20SageMaker-brightgreen) | **Managed ML Inference** | `tools/sagemaker_job.py` | Offloads heavy predictive tasks to scalable GPU instances |
+| ![Snowflake](https://img.shields.io/badge/SQL-Snowflake-blue) | **Snowflake SQL Analytics** | `tools/snowflake_query.py` | Feature aggregation, cost & KPI logging |
+
 
 ---
 
