@@ -1,0 +1,59 @@
+name: Build-Test-Coverage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v3
+
+    # 1️⃣  Java build (planner.jar)
+    - name: ☕ Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 17
+
+    - name: 🏗️  Build Planner.jar
+      run: |
+        cd agent/java
+        mvn -B package
+        cp target/planner-*-jar-with-dependencies.jar ../planner.jar
+        cd ../../
+
+    # 2️⃣  C++ build (libvector.so)
+    - name: ⚙️  Compile C++ vector library
+      run: |
+        g++ -O3 -shared -std=c++17 -fPIC agent/cpp/vector.cpp -o agent/cpp/libvector.so
+
+    # 3️⃣  Python setup + tests
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: 📦 Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coverage pytest jpype1 duckduckgo-search boto3 langgraph
+
+    - name: 🧪 Run tests with coverage
+      run: |
+        coverage run -m pytest
+        coverage xml -o coverage.xml
+
+    # 4️⃣  Upload coverage to Codecov
+    - name: 📈 Upload to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: coverage.xml
+        verbose: true
