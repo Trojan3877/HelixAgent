@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agentic-ai
+    environment:
+      # Mock DB creds (replace with real Snowflake in cloud)
+      SNOWFLAKE_ACCOUNT: "local"
+      SNOWFLAKE_USER: "demo"
+      SNOWFLAKE_PASSWORD: "demo"
+      SNOWFLAKE_DATABASE: "AGENT_DB"
+      SNOWFLAKE_SCHEMA: "PUBLIC"
+      SNOWFLAKE_WAREHOUSE: "LOCAL_WH"
+      AWS_DEFAULT_REGION: "us-east-1"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine          # acts as a local Snowflake stand-in
+    container_name: agent-db
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: agent_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  dbdata:
