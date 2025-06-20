@@ -1,0 +1,35 @@
+name: "\U0001F680 Feature request"
+description: Suggest an idea or enhancement
+title: "[FEAT] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for suggesting a feature to improve Agentic-AI-Assistant!"
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature Summary
+      description: One-sentence description of the enhancement.
+      placeholder: "Add vector-store persistence to support long-term memory."
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this important? What problem does it solve?
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed Approach
+      description: Describe how you would implement it (optional).
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked that this feature is not already requested.
+          required: true
