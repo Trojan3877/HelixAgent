@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------------
+# Default values for the Agentic-AI-Assistant Helm chart.
+# Override with: helm install ... -f my_values.yaml
+# ---------------------------------------------------------------------
+
+replicaCount: 1
+
+image:
+  repository: trojan3877/agentic-ai-assistant  # change to your Docker Hub repo
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000            # FastAPI default
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1024Mi
+
+env:                    # Environment variables passed to container
+  SNOWFLAKE_ACCOUNT: "your_account"
+  SNOWFLAKE_USER: "your_user"
+  SNOWFLAKE_DATABASE: "ANALYTICS_DB"
+  AWS_DEFAULT_REGION: "us-east-1"
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts: []   # e.g. agent-core.example.com
+  tls: []     # e.g. secretName, hosts
