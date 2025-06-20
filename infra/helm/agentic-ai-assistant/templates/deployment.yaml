@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "agentic-ai-assistant.fullname" . }}
+  labels:
+    {{- include "agentic-ai-assistant.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "agentic-ai-assistant.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "agentic-ai-assistant.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: agent
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+              name: http
+          env:
+            {{- range $key, $val := .Values.env }}
+            - name: {{ $key }}
+              value: "{{ $val }}"
+            {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
