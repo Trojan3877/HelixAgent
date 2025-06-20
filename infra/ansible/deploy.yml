@@ -1,0 +1,36 @@
+---
+# infra/ansible/deploy.yml
+# ------------------------------------------------------------
+# Deploy or upgrade the Agentic AI Assistant Helm release.
+#
+# Usage:
+#   ansible-playbook -i inventory deploy.yml \
+#     -e "helm_chart_path=../helm/agentic-ai-assistant"
+# ------------------------------------------------------------
+
+- name: 🚀 Deploy Agentic AI Assistant via Helm
+  hosts: localhost
+  connection: local
+
+  vars:
+    release_name: agentic-ai
+    namespace: default
+    helm_chart_path: ../helm/agentic-ai-assistant  # can be overridden
+
+  tasks:
+    - name: ⛴ Ensure Helm is installed
+      shell: |
+        if ! command -v helm &> /dev/null; then
+          curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+        fi
+
+    - name: 🛰️  Helm upgrade/install release
+      shell: |
+        helm upgrade --install {{ release_name }} {{ helm_chart_path }} \
+          --namespace {{ namespace }} \
+          --create-namespace
+      register: helm_output
+
+    - name: 📄 Show Helm result
+      debug:
+        var: helm_output.stdout_lines
