@@ -10,6 +10,8 @@
 ![Terraform](https://img.shields.io/badge/Terraform-EKS-critical)
 ![Ansible](https://img.shields.io/badge/Ansible-Automation-red)
 
+![Build](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://codecov.io/gh/Trojan3877/HelixAgent/branch/main/graph/badge.svg)
 
 
 
