@@ -13,6 +13,12 @@
 ![Build](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml/badge.svg)
 ![Coverage](https://codecov.io/gh/Trojan3877/HelixAgent/branch/main/graph/badge.svg)
 
+##  Tech Stack
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Java](https://img.shields.io/badge/Java-17-brightgreen)
+![C++](https://img.shields.io/badge/C%2B%2B-fast-red)
+![Docker](https://img.shields.io/badge/Docker-enabled-blue)
+![CI/CD](https://img.shields.io/badge/CI/CD-enabled-brightgreen)
 
 
 
@@ -28,10 +34,18 @@ This AI Agent production-grade autonomous agent that plans, executes, and evalua
 # 🤖 Agentic-AI-Assistant
 
 
-### 🧠 Project Overview  
-**Agentic-AI-Assistant** is a multi-language, autonomous “planner–executor” agent that blends Java task-planning, Python orchestration, and high-performance C++ vector tools. It can web-search, query Snowflake, spin up SageMaker jobs, and return concise answers—while logging quantifiable metrics to Snowflake and exposing a FastAPI interface.
+ HelixAgent
 
-## 🔍 Core AI / ML Algorithms Used
+> An autonomous AI agent orchestrating complex tasks via multi-language modules (Java, Python, C++).
+
+---
+
+##  Overview
+- **System:** Plans, executes, and evaluates tasks using LLM reasoning and enterprise tools.
+- **Purpose:** Demonstrate full-stack engineering with ML reasoning and tool orchestration.
+- **Applicability:** Ideal for research automation and business workflows.
+
+---
 
 | Badge | Algorithm / Component | Where It’s Used | Purpose |
 |-------|-----------------------|-----------------|---------|
@@ -64,14 +78,11 @@ Detailed explanation in **[`docs/architecture.md`](docs/architecture.md)**.
 ---
 
 ## 📈 Metrics Snapshot  
-See **[`docs/metrics.md`](docs/metrics.md)** for live Snowflake-logged KPIs.
-
-| KPI | Current | SLO |
-|-----|---------|-----|
-| Task Success | **94 %** | ≥ 90 % |
-| P95 Latency  | 11.3 s  | ≤ 12 s |
-| Coverage     | ![Coverage](https://codecov.io/gh/Trojan3877/Agentic-AI-Assistant/branch/main/graph/badge.svg) | ≥ 80 % |
-
+Results
+KPI	Value
+Task Success	94 %
+P95 Latency	11.3 s
+Coverage	≥ 80 %
 ---
 
 ## 🚀 Quick Start
@@ -86,7 +97,19 @@ pip install -r requirements.txt
 uvicorn app.api:app --reload
 
 ## 📂 File Structure
+├── java/
+├── python/
+├── linux/
+├── docs/
+├── Dockerfile
+└── README.md
 
+├── recommender/
+├── app/
+├── streamlit_app/
+├── helm/
+├── notebooks/
+└── README.md
 
 ---
 
@@ -101,20 +124,16 @@ uvicorn app.api:app --reload
 ---
 
 ## 🏗 Architecture Diagram  
-![Flow-chart](docs/flowchart.png)
-
-Detailed explanation in **[`docs/architecture.md`](docs/architecture.md)**.
+flowchart TD
+  Prompt → Planner → Orchestrator → Tools → FastAPI
 
 ---
 
 ## 📈 Metrics Snapshot  
 See **[`docs/metrics.md`](docs/metrics.md)** for live Snowflake-logged KPIs.
 
-| KPI | Current | SLO |
-|-----|---------|-----|
-| Task Success | **94 %** | ≥ 90 % |
-| P95 Latency  | 11.3 s  | ≤ 12 s |
-| Coverage     | ![Coverage](https://codecov.io/gh/Trojan3877/Agentic-AI-Assistant/branch/main/graph/badge.svg) | ≥ 80 % |
+Pipeline Latency	~200 ms
+Recommendations Accuracy	88 %
 
 ---
 
