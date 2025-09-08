@@ -1,0 +1,25 @@
+site_name: HelixAgent Docs
+site_description: Modular AI agent framework – Documentation
+site_author: Corey Leath
+repo_url: https://github.com/Trojan3877/HelixAgent
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: cyan
+  features:
+    - navigation.instant
+    - navigation.sections
+    - content.code.annotate
+    - content.tabs.link
+nav:
+  - Home: index.md
+  - Overview: overview.md
+  - Usage:
+      - Installation: usage/installation.md
+      - Running the Agent: usage/running.md
+  - API Reference: api.md
+  - System Design: system_design.md
+  - Observability: observability.md
+  - Roadmap: roadmap.md
+  - Contributing: contributing.md
