@@ -1,0 +1,39 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "HelixAgent Monitoring",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Request Rate",
+        "targets": [
+          {
+            "expr": "rate(helixagent_request_count[5m])",
+            "legendFormat": "{{method}} {{endpoint}}"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Request Latency",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(helixagent_request_latency_seconds_bucket[5m])) by (le, endpoint))",
+            "legendFormat": "95th percentile latency {{endpoint}}"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "title": "Total Requests",
+        "targets": [
+          {
+            "expr": "sum(helixagent_request_count)"
+          }
+        ]
+      }
+    ],
+    "schemaVersion": 27,
+    "version": 1
+  }
+}
