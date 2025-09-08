@@ -5,25 +5,22 @@
 An **AI-powered agent framework** designed for modular automation, reasoning, and decision-making.  
 Capstone-ready • Production-aware • Built for extensibility.
 
----
 
 ### 📊 Project Health & Features
 
-![Build](https://img.shields.io/github/actions/workflow/status/Trojan3877/HelixAgent/ci.yml?branch=main&label=Build&logo=github&color=brightgreen)
-![Tests](https://img.shields.io/github/actions/workflow/status/Trojan3877/HelixAgent/ci.yml?branch=main&label=Tests&logo=pytest&color=brightgreen)
-![Python](https://img.shields.io/badge/Python-3.10-brightgreen?logo=python)
-![License: MIT](https://img.shields.io/github/license/Trojan3877/HelixAgent?color=brightgreen)
+![CI/CD](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci-cd.yml/badge.svg)
+![Tests](https://img.shields.io/github/actions/workflow/status/Trojan3877/HelixAgent/ci-cd.yml?label=Tests&logo=pytest&color=brightgreen)
+![Coverage](https://img.shields.io/codecov/c/github/Trojan3877/HelixAgent?logo=codecov&color=brightgreen)
+![Docker](https://img.shields.io/badge/Docker-GHCR-brightgreen?logo=docker&logoColor=white)
+![Helm](https://img.shields.io/badge/Helm-Packaged-brightgreen?logo=helm&logoColor=white)
+![Observability](https://img.shields.io/badge/Monitoring-Prometheus%20%26%20OpenTelemetry-brightgreen?logo=prometheus&logoColor=white)
+![Release](https://img.shields.io/github/v/release/Trojan3877/HelixAgent?color=brightgreen&logo=github)
 ![Last Commit](https://img.shields.io/github/last-commit/Trojan3877/HelixAgent?logo=git&label=Last%20Commit&color=brightgreen)
 ![Repo Size](https://img.shields.io/github/repo-size/Trojan3877/HelixAgent?logo=github&label=Repo%20Size&color=brightgreen)
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen?logo=github)
 
-![Capstone Ready](https://img.shields.io/badge/Status-Capstone%20Ready-brightgreen?logo=checkmarx&logoColor=white)
-![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?logo=docker&logoColor=white)
-![CI/CD](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci-cd.yml/badge.svg)
-![Docker Image](https://img.shields.io/badge/Docker-GHCR-brightgreen?logo=docker&logoColor=white)
-![Helm Chart](https://img.shields.io/badge/Helm-Packaged-brightgreen?logo=helm&logoColor=white)
-![Release](https://img.shields.io/github/v/release/Trojan3877/HelixAgent?color=brightgreen&logo=github)
-![Observability](https://img.shields.io/badge/Monitoring-Prometheus%20%26%20OpenTelemetry-brightgreen?logo=prometheus&logoColor=white)
+</div>
+
 
 </div>
 
