@@ -1,0 +1,32 @@
+# ==============================
+# HelixAgent Helm Values
+# ==============================
+
+replicaCount: 2
+
+image:
+  repository: helixagent
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  ports:
+    fastapi: 8000
+    streamlit: 8501
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+logging:
+  level: INFO
+
+mlflow:
+  enabled: true
+  trackingUri: "http://mlflow:5000"
+  experimentName: "HelixAgent-Experiments"
