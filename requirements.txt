@@ -1,3 +1,7 @@
 flake8==7.0.0
 black==24.4.2
 isort==5.13.2
+
+mkdocs==1.5.3
+mkdocs-material==9.5.15
+
