@@ -1,152 +1,97 @@
-![Capstone](https://img.shields.io/badge/Project-Capstone-blueviolet)
-![Build](https://github.com/Trojan3877/Agentic-AI-Assistant/actions/workflows/ci.yml/badge.svg)
-![Coverage](https://codecov.io/gh/Trojan3877/Agentic-AI-Assistant/branch/main/graph/badge.svg)
-![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
-![Java](https://img.shields.io/badge/Java-17-red?logo=openjdk)
-![C++](https://img.shields.io/badge/C%2B%2B-17-lightgrey?logo=c%2B%2B)
-![FastAPI](https://img.shields.io/badge/FastAPI-Framework-brightgreen)
-![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
-![Helm](https://img.shields.io/badge/Helm-Chart-informational)
-![Terraform](https://img.shields.io/badge/Terraform-EKS-critical)
-![Ansible](https://img.shields.io/badge/Ansible-Automation-red)
+<div align="center">
 
-![Build](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml/badge.svg)
-![Coverage](https://codecov.io/gh/Trojan3877/HelixAgent/branch/main/graph/badge.svg)
+# 🌀 HelixAgent
 
-##  Tech Stack
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Java](https://img.shields.io/badge/Java-17-brightgreen)
-![C++](https://img.shields.io/badge/C%2B%2B-fast-red)
-![Docker](https://img.shields.io/badge/Docker-enabled-blue)
-![CI/CD](https://img.shields.io/badge/CI/CD-enabled-brightgreen)
-
-
-
-
-
-
-
-
-# -Agentic-AI-Assistant
-This AI Agent production-grade autonomous agent that plans, executes, and evaluates complex tasks by orchestrating Large-Language-Model reasoning with enterprise data tools. Its architecture deliberately spans three languages to showcase full-stack ML engineering depth:
-![image](https://github.com/user-attachments/assets/baa6a592-895f-4407-8104-9c00fbe76a1a)
-
-# 🤖 Agentic-AI-Assistant
-
-
- HelixAgent
-
-> An autonomous AI agent orchestrating complex tasks via multi-language modules (Java, Python, C++).
+An **AI-powered agent framework** designed for modular automation, reasoning, and decision-making.  
+Capstone-ready • Production-aware • Built for extensibility.
 
 ---
 
-##  Overview
-- **System:** Plans, executes, and evaluates tasks using LLM reasoning and enterprise tools.
-- **Purpose:** Demonstrate full-stack engineering with ML reasoning and tool orchestration.
-- **Applicability:** Ideal for research automation and business workflows.
+### 📊 Project Health & Features
+
+![Build](https://img.shields.io/github/actions/workflow/status/Trojan3877/HelixAgent/ci.yml?branch=main&label=Build&logo=github&color=brightgreen)
+![Tests](https://img.shields.io/github/actions/workflow/status/Trojan3877/HelixAgent/ci.yml?branch=main&label=Tests&logo=pytest&color=brightgreen)
+![Python](https://img.shields.io/badge/Python-3.10-brightgreen?logo=python)
+![License: MIT](https://img.shields.io/github/license/Trojan3877/HelixAgent?color=brightgreen)
+![Last Commit](https://img.shields.io/github/last-commit/Trojan3877/HelixAgent?logo=git&label=Last%20Commit&color=brightgreen)
+![Repo Size](https://img.shields.io/github/repo-size/Trojan3877/HelixAgent?logo=github&label=Repo%20Size&color=brightgreen)
+![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen?logo=github)
+
+![Capstone Ready](https://img.shields.io/badge/Status-Capstone%20Ready-brightgreen?logo=checkmarx&logoColor=white)
+![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?logo=docker&logoColor=white)
+
+</div>
 
 ---
 
-| Badge | Algorithm / Component | Where It’s Used | Purpose |
-|-------|-----------------------|-----------------|---------|
-| ![LLM](https://img.shields.io/badge/Model-LLM-orange) | **Large Language Model (GPT-3.5 / GPT-4 / Bedrock)** | `agent_core.py` via LangGraph | Natural-language reasoning, tool selection, summarization |
-| ![Planner](https://img.shields.io/badge/Planner-Heuristic-lightgrey) | **Heuristic Task Planner (Java)** | `planner.jar` | Deterministic decomposition of user requests into ordered steps |
-| ![LangGraph](https://img.shields.io/badge/Orchestrator-LangGraph-purple) | **State-Machine Orchestrator** | LangGraph graph in `agent_core.py` | Controls agent state, retries, memory, and step routing |
-| ![CosineSim](https://img.shields.io/badge/Algo-Cosine%20Similarity-blue) | **Cosine Similarity (C++17)** | `libvector.so` | Ultrafast vector math for semantic matching & ranking |
-| ![VectorStore](https://img.shields.io/badge/VectorStore-FAISS-green) | **FAISS Embedding Retrieval** | `memory.py` (short-term memory) | Stores & retrieves context chunks for the LLM |
-| ![SageMaker](https://img.shields.io/badge/ML-AWS%20SageMaker-brightgreen) | **Managed ML Inference** | `tools/sagemaker_job.py` | Offloads heavy predictive tasks to scalable GPU instances |
-| ![Snowflake](https://img.shields.io/badge/SQL-Snowflake-blue) | **Snowflake SQL Analytics** | `tools/snowflake_query.py` | Feature aggregation, cost & KPI logging |
-
+## 📖 Overview
+HelixAgent is a **modular AI agent framework** that enables automation of tasks, reasoning chains, and integration with external APIs.  
+It is designed for:
+- 🤖 Building autonomous assistants
+- 🧩 Extending with custom plugins
+- ⚡ Running fast experiments with structured logging and tracking
+- ☁️ Deployment via Docker and Helm
 
 ---
 
-## 🔍 Core Components & Algorithms
-| Layer | Tech | Role |
-|-------|------|------|
-| **Planner** | Java • Heuristic (future: LLM) | Converts prompt → ordered plan |
-| **Orchestrator** | Python + LangGraph | Executes plan, routes tools, manages memory |
-| **Vector Tool** | C++ cosine-sim | 18× faster than NumPy for 10k×300 dims |
-| **Tools** | Web search • Snowflake SQL • SageMaker batch | Extendable plug-ins |
-
----
-
-## 🏗 Architecture Diagram  
-![Flow-chart](docs/flowchart.png)
-
-Detailed explanation in **[`docs/architecture.md`](docs/architecture.md)**.
-
----
-
-## 📈 Metrics Snapshot  
-Results
-KPI	Value
-Task Success	94 %
-P95 Latency	11.3 s
-Coverage	≥ 80 %
----
-
-## 🚀 Quick Start
-
-### Local Dev
+## ⚙️ Installation
 ```bash
-git clone https://github.com/Trojan3877/Agentic-AI-Assistant.git
-cd Agentic-AI-Assistant
-python -m venv venv && source venv/bin/activate
+git clone https://github.com/Trojan3877/HelixAgent.git
+cd HelixAgent
 pip install -r requirements.txt
-# compile C++ lib / build planner.jar if needed
-uvicorn app.api:app --reload
+🚀 Usage
+Run the agent locally:
 
-## 📂 File Structure
-├── java/
-├── python/
-├── linux/
-├── docs/
-├── Dockerfile
-└── README.md
+bash
+Copy code
+python src/main.py
+Run API with FastAPI:
 
-├── recommender/
-├── app/
-├── streamlit_app/
-├── helm/
-├── notebooks/
-└── README.md
+bash
+Copy code
+uvicorn api.main:app --reload
+Run dashboard with Streamlit:
 
----
+bash
+Copy code
+streamlit run dashboard/app.py
+📚 Documentation
+📖 Project Overview
 
-## 🔍 Core Components & Algorithms
-| Layer | Tech | Role |
-|-------|------|------|
-| **Planner** | Java • Heuristic (future: LLM) | Converts prompt → ordered plan |
-| **Orchestrator** | Python + LangGraph | Executes plan, routes tools, manages memory |
-| **Vector Tool** | C++ cosine-sim | 18× faster than NumPy for 10k×300 dims |
-| **Tools** | Web search • Snowflake SQL • SageMaker batch | Extendable plug-ins |
+⚙️ Usage Guide
 
----
+🏗️ System Design
 
-## 🏗 Architecture Diagram  
-flowchart TD
-  Prompt → Planner → Orchestrator → Tools → FastAPI
+🔒 Policies & Standards
+📑 Changelog
 
----
+🛣️ Roadmap
 
-## 📈 Metrics Snapshot  
-See **[`docs/metrics.md`](docs/metrics.md)** for live Snowflake-logged KPIs.
+📊 Project Status
 
-Pipeline Latency	~200 ms
-Recommendations Accuracy	88 %
+📜 Code of Conduct
 
----
+🔒 Security Policy
 
-## 🚀 Quick Start
+🤝 Contributing Guide
 
-### Local Dev
-```bash
-git clone https://github.com/Trojan3877/Agentic-AI-Assistant.git
-cd Agentic-AI-Assistant
-python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-# compile C++ lib / build planner.jar if needed
-uvicorn app.api:app --reload
+📖 Citation
+
+✅ Current Status
+HelixAgent is in active development.
+The repo includes:
+
+Structured logging (loguru)
+
+Experiment tracking (MLflow)
+
+Config management (YAML)
+
+Unit testing (pytest)
+
+CI/CD with GitHub Actions
+
+Containerization (Docker + Helm)
 
 
-agentic-ai • langgraph • java-planner • c++-vector • fastapi • snowflake • sagemaker • docker • kubernetes • terraform • ansible • ci/cd
+
