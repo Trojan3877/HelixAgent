@@ -5,11 +5,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  release:
+    types: [published]
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -45,7 +46,6 @@ jobs:
   docker-build-push:
     runs-on: ubuntu-latest
     needs: [build-test, lint-helm]
-
     permissions:
       contents: read
       packages: write
@@ -66,4 +66,31 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}/helixagent:latest
+          tags: |
+            ghcr.io/${{ github.repository }}/helixagent:latest
+            ghcr.io/${{ github.repository }}/helixagent:${{ github.sha }}
+            ghcr.io/${{ github.repository }}/helixagent:${{ github.ref_name }}
+
+  release-helm:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.12.3
+
+      - name: Package Helm chart
+        run: |
+          helm package helm
+          mkdir -p release
+          mv helixagent-*.tgz release/
+
+      - name: Upload Helm chart to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release/*.tgz
+
