@@ -23,6 +23,7 @@ Capstone-ready • Production-aware • Built for extensibility.
 ![Docker Image](https://img.shields.io/badge/Docker-GHCR-brightgreen?logo=docker&logoColor=white)
 ![Helm Chart](https://img.shields.io/badge/Helm-Packaged-brightgreen?logo=helm&logoColor=white)
 ![Release](https://img.shields.io/github/v/release/Trojan3877/HelixAgent?color=brightgreen&logo=github)
+![Observability](https://img.shields.io/badge/Monitoring-Prometheus%20%26%20OpenTelemetry-brightgreen?logo=prometheus&logoColor=white)
 
 </div>
 
