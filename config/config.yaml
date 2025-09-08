@@ -1,0 +1,48 @@
+# ==============================
+# HelixAgent Configuration File
+# ==============================
+
+# General project settings
+project:
+  name: "HelixAgent"
+  version: "1.0.0"
+  author: "Corey Leath"
+  description: "Modular AI agent framework for automation, reasoning, and decision-making."
+
+# Logging settings
+logging:
+  level: "INFO"        # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_to_file: true
+  log_file: "logs/helixagent.log"
+
+# Agent settings
+agent:
+  model: "gpt-neo"     # Example: "gpt-neo", "gpt-2", "custom"
+  max_tokens: 512
+  temperature: 0.7
+  top_p: 0.9
+
+# API settings
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+
+# Dashboard settings
+dashboard:
+  host: "localhost"
+  port: 8501
+
+# Experiment tracking
+mlflow:
+  enabled: true
+  experiment_name: "HelixAgent-Experiments"
+  tracking_uri: "http://127.0.0.1:5000"
+
+# Data ingestion
+data:
+  input_path: "data/input/"
+  output_path: "data/output/"
+  batch_size: 32
+  shuffle: true
+  validation_split: 0.1
