@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helixagent-deployment
+  labels:
+    app: helixagent
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helixagent
+  template:
+    metadata:
+      labels:
+        app: helixagent
+    spec:
+      containers:
+        - name: helixagent
+          image: helixagent:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000   # FastAPI
+            - containerPort: 8501   # Streamlit
+          env:
+            - name: LOG_LEVEL
+              value: "INFO"
+            - name: MLFLOW_TRACKING_URI
+              value: "http://mlflow:5000"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: helixagent-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helixagent-service
+spec:
+  selector:
+    app: helixagent
+  type: LoadBalancer
+  ports:
+    - name: fastapi
+      port: 8000
+      targetPort: 8000
+    - name: streamlit
+      port: 8501
+      targetPort: 8501
