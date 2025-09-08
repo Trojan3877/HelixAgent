@@ -18,11 +18,11 @@ Capstone-ready • Production-aware • Built for extensibility.
 ![Last Commit](https://img.shields.io/github/last-commit/Trojan3877/HelixAgent?logo=git&label=Last%20Commit&color=brightgreen)
 ![Repo Size](https://img.shields.io/github/repo-size/Trojan3877/HelixAgent?logo=github&label=Repo%20Size&color=brightgreen)
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen?logo=github)
+![Coverage](https://codecov.io/gh/Trojan3877/HelixAgent/branch/main/graph/badge.svg)
 
-</div>
 
 
-</div>
+
 
 ---
 
