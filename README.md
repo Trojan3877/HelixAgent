@@ -38,6 +38,42 @@ It is designed for:
 - ☁️ Deployment via Docker and Helm
 
 ---
+Demos
+## 📘 Examples
+
+HelixAgent includes ready-to-run Jupyter notebooks under the [`examples/`](examples/) folder:
+
+- [Quickstart](examples/quickstart.ipynb) → Run logger, data pipeline, MLflow tracking  
+- [Training Demo](examples/training_demo.ipynb) → Simulated training loop with metrics  
+- [Inference Demo](examples/inference_demo.ipynb) → Query API endpoints (FastAPI)  
+- [Monitoring Demo](examples/monitoring_demo.ipynb) → Scrape Prometheus metrics  
+
+👉 These notebooks make it easy to test HelixAgent without setup friction.
+ ┌───────────────────────────┐
+            │       Clients / UI        │
+            │ (Streamlit dashboard, CLI)│
+            └─────────────┬─────────────┘
+                          │
+                          ▼
+            ┌───────────────────────────┐
+            │         FastAPI API        │
+            │  - /predict                │
+            │  - /metrics (Prometheus)   │
+            └─────────────┬─────────────┘
+                          │
+        ┌─────────────────┼─────────────────┐
+        ▼                 ▼                 ▼
+┌──────────────┐  ┌──────────────┐  ┌─────────────────┐
+│ Data Ingest  │  │ Model Core   │  │ Monitoring Layer │
+│ (pandas/SkL) │  │ (LLMs/NLP)   │  │ (Logs, Tracing) │
+└──────────────┘  └──────────────┘  └─────────────────┘
+                          │
+                          ▼
+            ┌───────────────────────────┐
+            │   MLflow + Experiment Log │
+            │   + Artifacts + Metrics   │
+            └───────────────────────────┘
+
 
 ## ⚙️ Installation
 ```bash
