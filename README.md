@@ -19,6 +19,10 @@ Capstone-ready • Production-aware • Built for extensibility.
 
 ![Capstone Ready](https://img.shields.io/badge/Status-Capstone%20Ready-brightgreen?logo=checkmarx&logoColor=white)
 ![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?logo=docker&logoColor=white)
+![CI/CD](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci-cd.yml/badge.svg)
+![Docker Image](https://img.shields.io/badge/Docker-GHCR-brightgreen?logo=docker&logoColor=white)
+![Helm Chart](https://img.shields.io/badge/Helm-Packaged-brightgreen?logo=helm&logoColor=white)
+![Release](https://img.shields.io/github/v/release/Trojan3877/HelixAgent?color=brightgreen&logo=github)
 
 </div>
 
