@@ -1,7 +1,3 @@
-prometheus-client==0.20.0
-opentelemetry-sdk==1.24.0
-opentelemetry-instrumentation-fastapi==0.49b0
-
-
-uvicorn api.main:app --reload --port 8000
-
+flake8==7.0.0
+black==24.4.2
+isort==5.13.2
