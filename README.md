@@ -21,6 +21,7 @@ Capstone-ready • Production-aware • Built for extensibility.
 ![Coverage](https://codecov.io/gh/Trojan3877/HelixAgent/branch/main/graph/badge.svg)
 ![Lint](https://img.shields.io/github/actions/workflow/status/Trojan3877/HelixAgent/ci-cd.yml?label=Lint&logo=python&color=brightgreen)
 ![Style](https://img.shields.io/badge/Code%20Style-Black-brightgreen?logo=python&logoColor=white)
+![Docs](https://img.shields.io/badge/Docs-MkDocs%20Live-brightgreen?logo=readthedocs&logoColor=white)
 
 
 
