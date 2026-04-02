@@ -42,7 +42,3 @@ jobs:
 
       - name: Lint Helm chart
         run: helm lint helm/
-
-git add .github/workflows/ci.yml
-git commit -m "Add GitHub Actions CI workflow for tests + Helm linting"
-git push origin main

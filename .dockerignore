@@ -1,0 +1,68 @@
+# ================================================================
+# HelixAgent – .dockerignore
+# ================================================================
+
+# Git
+.git
+.gitignore
+.github
+
+# Python cache
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv
+venv
+env
+ENV
+
+# Testing / coverage
+.pytest_cache
+.coverage
+htmlcov
+coverage.xml
+
+# Secrets
+.env
+*.env
+
+# Logs
+logs/
+*.log
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# MLflow artifacts
+mlruns/
+mlartifacts/
+
+# Docs build
+site/
+
+# Jupyter checkpoints
+.ipynb_checkpoints
+
+# Terraform state (never in image)
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Node (if any frontend tooling)
+node_modules/
+
+# Pre-commit cache
+.ruff_cache/
