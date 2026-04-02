@@ -7,8 +7,10 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: agentic-ai
+    # env_file:
+    #   - .env   # copy .env.example → .env and fill in real values before running
     environment:
-      # Mock DB creds (replace with real Snowflake in cloud)
+      # Override / supplement env_file values for local dev
       SNOWFLAKE_ACCOUNT: "local"
       SNOWFLAKE_USER: "demo"
       SNOWFLAKE_PASSWORD: "demo"
@@ -19,7 +21,14 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
 
   db:
     image: postgres:15-alpine          # acts as a local Snowflake stand-in
@@ -32,6 +41,11 @@ services:
       - "5432:5432"
     volumes:
       - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U demo -d agent_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   dbdata:

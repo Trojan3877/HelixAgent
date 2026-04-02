@@ -192,3 +192,13 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Application logs
+logs/
+
+# MLflow artifacts
+mlruns/
+mlartifacts/
+
+# Data files (large datasets should not be committed)
+data/output/

@@ -30,12 +30,12 @@ test:
 .PHONY: lint
 lint:
 	$(PYTHON) -m pip install --quiet ruff mypy
-	ruff agent app tests
-	mypy agent app --ignore-missing-imports
+	ruff agent api src tests
+	mypy agent api src --ignore-missing-imports
 
 .PHONY: dev
 dev:
-	uvicorn app.api:app --reload --port 8000
+	uvicorn api.main:app --reload --port 8000
 
 # --------------------------------------------------------------------
 # Docker targets

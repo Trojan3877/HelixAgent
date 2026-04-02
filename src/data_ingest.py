@@ -9,7 +9,7 @@ Supports CSV files and can be extended for JSON, APIs, etc.
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from utils.logger import setup_logger
+from src.utils.logger import setup_logger
 
 log = setup_logger()
 

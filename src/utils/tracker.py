@@ -8,7 +8,7 @@ parameters, and artifacts.
 """
 
 import mlflow
-from utils.logger import setup_logger
+from src.utils.logger import setup_logger
 
 log = setup_logger()
 
