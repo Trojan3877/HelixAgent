@@ -9,6 +9,9 @@
 #   make helm-up         # upgrade Helm release (local Kube context)
 #   make tf-plan         # terraform plan   (infra/terraform)
 #   make tf-apply        # terraform apply  (infra/terraform)
+#   make cpp-build       # compile C++ cosine-similarity library
+#   make java-build      # compile Java planner JAR via Maven
+#   make build-native    # compile both C++ and Java artifacts
 # --------------------------------------------------------------------
 
 PYTHON      ?= python
@@ -36,6 +39,23 @@ lint:
 .PHONY: dev
 dev:
 	uvicorn api.main:app --reload --port 8000
+
+# --------------------------------------------------------------------
+# Native build targets
+# --------------------------------------------------------------------
+.PHONY: cpp-build
+cpp-build:
+	g++ -O3 -shared -std=c++17 -fPIC agent/cpp/vector.cpp -o agent/cpp/libvector.so
+	@echo "✓  agent/cpp/libvector.so built"
+
+.PHONY: java-build
+java-build:
+	cd java && mvn package -q
+	@echo "✓  agent/java/planner.jar built"
+
+.PHONY: build-native
+build-native: cpp-build java-build
+	@echo "✓  All native artifacts built"
 
 # --------------------------------------------------------------------
 # Docker targets

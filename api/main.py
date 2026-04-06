@@ -7,6 +7,7 @@ Main API entrypoint. Mounts monitoring (Prometheus + OpenTelemetry) and
 exposes core routes for agent inference.
 """
 
+import logging
 import os
 
 from fastapi import FastAPI
@@ -51,15 +52,15 @@ async def predict(payload: PredictRequest):
 
     Returns:
         { "result": "<agent response>" }
-
-    Note: Full agent integration (LangGraph + Java planner) is wired in
-    agent/agent_core.py.  This endpoint serves as the HTTP interface; swap
-    in AgenticAssistant().run(prompt) once the Java JAR and C++ .so are built.
     """
-    # Placeholder response – replace with agent invocation once built:
-    # from agent.agent_core import AgenticAssistant
-    # result = AgenticAssistant().run(payload.prompt)
-    result = f"[HelixAgent] received: {payload.prompt}"
+    try:
+        from agent.agent_core import AgenticAssistant  # noqa: PLC0415
+
+        assistant = AgenticAssistant()
+        result = assistant.run(payload.prompt)
+    except Exception as exc:  # noqa: BLE001
+        result = f"[HelixAgent] received: {payload.prompt}"
+        logging.getLogger(__name__).warning("Agent core unavailable: %s", exc)
     return {"result": result}
 
 
