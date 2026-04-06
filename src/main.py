@@ -40,15 +40,17 @@ def main() -> None:
     log.info("HelixAgent starting...")
     log.info(f"Prompt: {args.prompt}")
 
-    # Full agent invocation (requires Java JAR + C++ .so to be compiled):
-    #   from agent.agent_core import AgenticAssistant
-    #   assistant = AgenticAssistant()
-    #   output = assistant.run(args.prompt)
-    #   print("Agent Output:", output)
+    try:
+        from agent.agent_core import AgenticAssistant  # noqa: E402
 
-    # Smoke-test path (no native deps needed):
-    log.info("Agent core not yet wired – running smoke test only.")
-    print(f"[HelixAgent] Echo: {args.prompt}")
+        log.info("Initializing agent core...")
+        assistant = AgenticAssistant()
+        output = assistant.run(args.prompt)
+        log.info("Agent run complete.")
+        print(f"Agent Output: {output}")
+    except Exception as exc:  # noqa: BLE001
+        log.warning(f"Agent core unavailable ({exc}); running echo mode.")
+        print(f"[HelixAgent] Echo: {args.prompt}")
 
 
 if __name__ == "__main__":

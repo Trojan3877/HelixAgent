@@ -33,6 +33,15 @@ pytest-cov==5.0.0
 coverage==7.5.1
 httpx==0.27.0
 
+# --- Agent orchestration ---
+langgraph==1.1.6
+jpype1==1.6.0
+
+# --- Cloud / data-source tools ---
+boto3==1.42.83
+snowflake-connector-python==4.4.0
+ddgs==9.12.1
+
 # --- Documentation ---
 mkdocs==1.5.3
 mkdocs-material==9.5.15
