@@ -5,24 +5,37 @@
 An **AI-powered agent framework** designed for modular automation, reasoning, and decision-making.  
 Capstone-ready • Production-aware • Built for extensibility.
 
-### 📊 Project Health & Features
+ HelixAgent — Autonomous AI Agent System
 
-![CI/CD](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml/badge.svg)
-![Lint](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci-cd.yml/badge.svg?label=Lint)
-![Docker](https://img.shields.io/badge/Docker-ready-brightgreen?logo=docker&logoColor=white)
-![Helm](https://img.shields.io/badge/Helm-Packaged-brightgreen?logo=helm&logoColor=white)
-![Observability](https://img.shields.io/badge/Monitoring-Prometheus%20%26%20OpenTelemetry-brightgreen?logo=prometheus&logoColor=white)
-![Last Commit](https://img.shields.io/github/last-commit/Trojan3877/HelixAgent?logo=git&label=Last%20Commit&color=brightgreen)
-![Repo Size](https://img.shields.io/github/repo-size/Trojan3877/HelixAgent?logo=github&label=Repo%20Size&color=brightgreen)
-![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen?logo=github)
-![Style](https://img.shields.io/badge/Code%20Style-Black-brightgreen?logo=python&logoColor=white)
-![Docs](https://img.shields.io/badge/Docs-MkDocs%20Live-brightgreen?logo=readthedocs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![TypeScript](https://img.shields.io/badge/TypeScript-Agent%20Layer-blue?logo=typescript)
+![Go](https://img.shields.io/badge/Go-Backend-blue?logo=go)
+![LLM](https://img.shields.io/badge/LLM-Integrated-purple)
+![Agents](https://img.shields.io/badge/AI-Agents-orange)
+![LangChain](https://img.shields.io/badge/LangChain-Orchestration-green)
+![RAG](https://img.shields.io/badge/RAG-Pipeline-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Inference-green?logo=fastapi)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-red?logo=streamlit)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue?logo=docker)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestrated-blue?logo=kubernetes)
+![Helm](https://img.shields.io/badge/Helm-Charts-blue?logo=helm)
+![CI/CD](https://img.shields.io/badge/CI/CD-GitHub%20Actions-black?logo=githubactions)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple?logo=terraform)
+![Ansible](https://img.shields.io/badge/Ansible-Automation-red?logo=ansible)
+![Observability](https://img.shields.io/badge/Observability-Enabled-orange)
+![Grafana](https://img.shields.io/badge/Grafana-Monitoring-orange?logo=grafana)
+![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-yellow?logo=prometheus)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
+![Stars](https://img.shields.io/github/stars/Trojan3877/HelixAgent?style=social)
+![Forks](https://img.shields.io/github/forks/Trojan3877/HelixAgent?style=social)
+![Autonomous](https://img.shields.io/badge/Autonomous-Agents-critical)
+![Multi-Agent](https://img.shields.io/badge/Multi--Agent-System-blue)
+![Real-Time](https://img.shields.io/badge/Real--Time-Decisioning-green)
+![Scalable](https://img.shields.io/badge/Scale-Horizontal-blue)
+![Microservices](https://img.shields.io/badge/Architecture-Microservices-black)
+![Latency](https://img.shields.io/badge/Latency-Low-critical)
 
-</div>
-
----
-
-## 📖 Overview
 
 HelixAgent is a **modular AI agent framework** that enables automation of tasks, reasoning chains, and integration with external APIs. It is designed for:
 
