@@ -15,10 +15,10 @@ For demo purposes this module:
   3. Returns a concatenated summary string
 
 Dependencies:
-    pip install duckduckgo-search==5.2.2
+    pip install ddgs
 """
 
-from duckduckgo_search import DDGS
+from ddgs import DDGS
 
 def search_and_summarize(query: str, max_results: int = 5) -> str:
     """
