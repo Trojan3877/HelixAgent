@@ -2,24 +2,32 @@ name: Deploy Docs
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main # Triggers the deployment pipeline anytime code is pushed to main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    
+    # CRITICAL FIX: Grants the GITHUB_TOKEN write access to push the compiled site to gh-pages
+    permissions:
+      contents: write
+
     steps:
-      - name: Checkout repo
+      - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
-          cache: "pip"
+          python-version: '3.11'
+          cache: 'pip' # Speeds up subsequent pipeline runs
 
-      - name: Install MkDocs
+      - name: 📦 Install Documentation Dependencies
         run: |
-          pip install mkdocs mkdocs-material
+          python -m pip install --upgrade pip
+          pip install mkdocs-material mkdocs
 
-      - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+      - name: 🚀 Build and Deploy to GitHub Pages
+        run: |
+          mkdocs gh-deploy --force
