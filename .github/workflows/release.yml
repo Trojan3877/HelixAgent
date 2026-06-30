@@ -1,0 +1,26 @@
+name: Automated Release Engineering
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Build Semantic Release Tag
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Crucial permission for pushing release assets
+
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Pulls full git history for changelog construction
+
+      - name: 🏷️ Calculate Tag and Generate GitHub Release
+        uses: anothrNick/github-tag-action@1.64.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: patch
