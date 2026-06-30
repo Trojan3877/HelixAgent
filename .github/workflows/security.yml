@@ -3,8 +3,8 @@ name: Security Analysis
 on:
   push:
     branches: [ main ]
-  schedule:
-    - cron: '0 0 * * 0' # Evaluates the codebase weekly
+  pull_request:
+    branches: [ main ]
 
 jobs:
   security-scan:
@@ -14,7 +14,6 @@ jobs:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
 
-      # Scans the repo to verify no raw API credentials or tokens were committed
       - name: 🛡️ Scan for Hardcoded Secrets
         uses: trufflesecurity/trufflehog@main
         with:
@@ -26,9 +25,8 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Automatically checks your requirements files for known package vulnerabilities
       - name: 📦 Check Python Package Dependencies
         run: |
           pip install safety
-          # Creates a report; will pass if packages are safe
-          safety check --ignore=mock || echo "Review security warnings above."
+          # Runs safety check but prevents it from breaking the build on warning definitions
+          safety check || echo "⚠️ Security Scan: Please review the dependency alerts above."
