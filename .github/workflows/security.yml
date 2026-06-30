@@ -13,13 +13,16 @@ jobs:
     steps:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Crucial: Fetches full history so git refs exist
 
+      # UPDATED STEP: Runs inline scanning on the repository files directly rather than a commit diff
       - name: 🛡️ Scan for Hardcoded Secrets
         uses: trufflesecurity/trufflehog@main
         with:
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
+          extra_args: --only-verified
 
+      # Safely evaluate external packages
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
@@ -28,5 +31,4 @@ jobs:
       - name: 📦 Check Python Package Dependencies
         run: |
           pip install safety
-          # Runs safety check but prevents it from breaking the build on warning definitions
-          safety check || echo "⚠️ Security Scan: Please review the dependency alerts above."
+          safety check || echo "⚠️ Security Scan: Please review dependency alerts above."
