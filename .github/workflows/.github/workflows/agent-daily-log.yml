@@ -1,0 +1,50 @@
+name: Autonomous Agent Daily Logger
+
+on:
+  schedule:
+    # Runs every day at 23:50 UTC
+    - cron: '50 23 * * *'
+  workflow_dispatch: # Allows manual trigger via GitHub UI for testing
+
+jobs:
+  update-log:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Crucial for pushing the DAILYLOG.md back
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetches history so git log can see changes
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-python: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          # Add extra required clients if not pinned in requirements
+          pip install openai 
+
+      - name: Execute Logging Agent
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python agent/reporter.py
+
+      - name: Commit and Push DAILYLOG.md
+        run: |
+          git config --global user.name "HelixAgent[Bot]"
+          git config --global user.email "agent-bot@helix.internal"
+          git add DAILYLOG.md
+          
+          # Check if there are changes to commit to avoid empty pipeline failures
+          if git diff --staged --quiet; then
+            echo "No updates to DAILYLOG.md today."
+          else
+            git commit -m "chore(docs): autonomous system update for $(date +'%Y-%m-%d') [skip ci]"
+            git push origin main
+          fi
