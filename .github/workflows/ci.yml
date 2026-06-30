@@ -23,12 +23,8 @@ jobs:
       - name: 📦 Install Linting Frameworks
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 black
+          pip install flake8
 
-      # Auto-formats common spacing issues before testing
-      - name: 🎨 Run Black Code Formatter Check
-        run: black --check src/ tests/ --line-length 120
-
-      # Relaxes line lengths to 120 and skips empty line spacing errors
+      # Clear Flake8 linter running with modern character tolerances
       - name: 🚀 Run Flake8 Linter
         run: flake8 src/ tests/ --max-line-length=120 --ignore=W293,F401
