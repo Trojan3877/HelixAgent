@@ -4,7 +4,7 @@
 [![Code Quality Assurance](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml)
 [![Security Analysis](https://github.com/Trojan3877/HelixAgent/actions/workflows/security.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/security.yml)
 [![Automated Release](https://github.com/Trojan3877/HelixAgent/actions/workflows/release.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/release.yml)
-[![Documentation Deployment](https://github.com/Trojan3877/HelixAgent/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/deploy-docs.yml)
+[![Documentation](https://img.shields.io/badge/documentation-deployed-brightgreen.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/deploy-docs.yml)
 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![Code Style: Flake8](https://img.shields.io/badge/code%20style-flake8-black)](https://flake8.pycqa.org/)
@@ -40,7 +40,7 @@ graph TD
     F --> H["Agent 2: NLP / LLM Generation"]
     F --> I["Agent 3: Quantitative Evaluation"]
     
-    G --> J(("(Model Registry & Output)"))
+    G --> J["Model Registry & Output Processing"]
     H --> J
     I --> J
     
@@ -51,6 +51,8 @@ graph TD
     style A fill:#2d3436,stroke:#74b9ff,stroke-width:2px,color:#fff
     style K fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff
     style F fill:#6c5ce7,stroke:#a29bfe,stroke-width:2px,color:#fff
+
+
 Quickstart Guide
 Get the HelixAgent core engine running in your local environment in under two minutes.
 
