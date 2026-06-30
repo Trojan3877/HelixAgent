@@ -1,13 +1,11 @@
 # 🧬 HelixAgent: Autonomous MLOps & Multi-Agent Infrastructure
 
-<!-- CI/CD & Pipeline Badges -->
 [![Continuous Integration](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci-cd.yml)
 [![Code Quality Assurance](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/ci.yml)
 [![Security Analysis](https://github.com/Trojan3877/HelixAgent/actions/workflows/security.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/security.yml)
 [![Automated Release](https://github.com/Trojan3877/HelixAgent/actions/workflows/release.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/release.yml)
-[![Documentation](https://github.com/Trojan3877/HelixAgent/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/deploy-docs.yml)
+[![Documentation Deployment](https://github.com/Trojan3877/HelixAgent/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/Trojan3877/HelixAgent/actions/workflows/deploy-docs.yml)
 
-<!-- Technology & Formatting Badges -->
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![Code Style: Flake8](https://img.shields.io/badge/code%20style-flake8-black)](https://flake8.pycqa.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -31,26 +29,28 @@ The following diagram maps the automated lifecycle from data ingestion to model 
 ```mermaid
 graph TD
     %% Define Nodes
-    A[Client Request / API Gateway] -->|Payload| B(Data Ingestion Pipeline)
-    B --> C{Data Validation & Sanitization}
+    A["Client Request / API Gateway"] -->|Payload| B("Data Ingestion Pipeline")
+    B --> C{"Data Validation & Sanitization"}
     
-    C -->|Invalid| D[Dead Letter Queue / Error Log]
-    C -->|Valid| E[Feature Store & Processing]
+    C -->|Invalid| D["Dead Letter Queue / Error Log"]
+    C -->|Valid| E["Feature Store & Processing"]
     
-    E --> F[Multi-Agent Router]
-    F --> G[Agent 1: Analytics & Forecasting]
-    F --> H[Agent 2: NLP / LLM Generation]
-    F --> I[Agent 3: Quantitative Evaluation]
+    E --> F["Multi-Agent Router"]
+    F --> G["Agent 1: Analytics & Forecasting"]
+    F --> H["Agent 2: NLP / LLM Generation"]
+    F --> I["Agent 3: Quantitative Evaluation"]
     
-    G --> J((Model Registry & Output))
+    G --> J(("(Model Registry & Output)"))
     H --> J
     I --> J
     
-    J --> K[Telemetry & MLOps Tracker]
-    K --> L[Final API Response]
+    J --> K["Telemetry & MLOps Tracker"]
+    K --> L["Final API Response"]
     
     %% Styling
-    style A fi
+    style A fill:#2d3436,stroke:#74b9ff,stroke-width:2px,color:#fff
+    style K fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff
+    style F fill:#6c5ce7,stroke:#a29bfe,stroke-width:2px,color:#fff
 Quickstart Guide
 Get the HelixAgent core engine running in your local environment in under two minutes.
 
